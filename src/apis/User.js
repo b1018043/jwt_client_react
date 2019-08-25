@@ -13,9 +13,9 @@ export function sendLoginRequest(email, pass) {
             if (err.status === 400)
             {
                 console.log("無効なリクエストです")
-            } else if (err.status === 417)
+            } else if (err.status === 401)
             {
-                console.log("アカウントが存在しません")
+                console.log("認証に失敗しました")
             } else
             {
                 console.log("無理")
@@ -36,8 +36,8 @@ export function sendSignUpRequest(username,email,pass){
         .catch(err=>{
             if(err.status===400){
                 console.log("無効なリクエストです")
-            }else if(err.status===417){
-                console.log("もう一回送りなおしてください")
+            }else if(err.status===409){
+                console.log("すでに登録されています")
             }else{
                 console.log("無理")
             }
