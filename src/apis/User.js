@@ -7,7 +7,7 @@ export function sendLoginRequest(email, pass) {
         .then(res => {
             const json = JSON.parse(res.text);
             const { token } = json;
-            return token;
+            return {token};
         })
         .catch(err => {
             if (err.status === 400)
@@ -25,13 +25,13 @@ export function sendLoginRequest(email, pass) {
 }
 
 export function sendSignUpRequest(username,email,pass){
-    return request.post(`http://localhost:8080/login`)
+    return request.post(`http://localhost:8080/signup`)
         .set("Content-Type", "application/json")
         .send({username:username,email:email,password:pass})
         .then(res=>{
             const json=JSON.parse(res.text);
             const {token}=json;
-            return token;
+            return {token};
         })
         .catch(err=>{
             if(err.status===400){
