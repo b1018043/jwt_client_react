@@ -12,6 +12,8 @@ export function getTodoData(token){
                 console.log("無効なリクエストです")
             }else if(err.status===500){
                 console.log("もう一回")
+            }else if(err.status===401){
+                console.log("再認証が必要です。")
             }else{
                 console.log("無理")
             }
@@ -32,6 +34,8 @@ export function postTodoData(token,todo){
                 console.log("無効なリクエストです")
             }else if(err.status===500){
                 console.log("もう一回")
+            }else if(err.status===401){
+                console.log("再認証が必要です")
             }else{
                 console.log("無理")
             }
@@ -52,6 +56,8 @@ export function patchTodoData(token,todoid,process){
                 console.log("無効なリクエストです")
             }else if(err.status===500){
                 console.log("もう一回")
+            }else if(err.status===401){
+                console.log("再認証が必要です")
             }else{
                 console.log("無理")
             }
@@ -72,6 +78,8 @@ export function deleteTodoData(token,todoid){
                 console.log("無効なリクエストです")
             }else if(err.status===500){
                 console.log("もう一回")
+            }else if(err.status===401){
+                console.log("再認証が必要です")
             }else{
                 console.log("無理")
             }
