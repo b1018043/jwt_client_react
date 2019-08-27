@@ -47,11 +47,11 @@ function* deleteTodo(action){
     }
 }
 
-const sagas=[
+const saga=[
     takeEvery(GET_TODO,getTodo),
     takeEvery(POST_TODO,postTodo),
     takeEvery(PATCH_TODO,patchTodo),
     takeEvery(DELETE_TODO,deleteTodo),
 ];
 
-export default sagas;
+export default saga;
