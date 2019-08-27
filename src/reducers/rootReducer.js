@@ -3,10 +3,10 @@ import {connectRouter} from "connected-react-router";
 import userReducer from "./User";
 import todoReducer from "./Todo";
 
-const rootReducer=history=>combineReducers({
+const createRootReducer=history=>combineReducers({
     router: connectRouter(history),
     user: userReducer,
     todo: todoReducer,
 });
 
-export default rootReducer;
+export default createRootReducer;
