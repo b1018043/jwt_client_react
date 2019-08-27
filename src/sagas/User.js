@@ -1,6 +1,6 @@
-import {call,put,fork,join,takeEvery} from 'redux-saga/effects';
+import {call,put,takeEvery} from 'redux-saga/effects';
 import {sendLoginRequest,sendSignUpRequest} from "../apis/User";
-import {loginRequest,loginSuccess,loginFailed,signUpRequest,signUpSuccess,signUpFailed,SIGNUP_REQUEST,LOGIN_REQUEST} from "../actions/User";
+import {loginSuccess,loginFailed,signUpSuccess,signUpFailed,SIGNUP_REQUEST,LOGIN_REQUEST} from "../actions/User";
 import {getTodoRequest} from "../actions/Todo";
 import {push} from "connected-react-router";
 
@@ -24,7 +24,7 @@ function* signUp(action){
     }else{
         yield put(signUpSuccess(token));
         yield put(getTodoRequest(token));
-        yield put(push('todo'));
+        yield put(push('/todo'));
     }
 }
 
