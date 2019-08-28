@@ -8,6 +8,7 @@ import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import {history} from "./index";
 import AppBar from "./components/AppBar";
+import TodoLists from "./components/Todos";
 
 function App() {
   const {token}=useSelector(state=>state.user);
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" component={AppBar}/>
       </Switch>
       <Switch>
+        <Route exact path="/todo" component={TodoLists} />
         <Route exact path="/signup" component={SignUp}/>
         <Route exact path="/login" component={Login} />
       </Switch>
