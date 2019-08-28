@@ -28,7 +28,13 @@ export default function userReducer(state=initState,action){
             localStorage.removeItem('token')
             return {
                 ...state,
-                token: action.payload
+                token: ""
+            }
+        case actions.LOGOUT:
+            localStorage.removeItem('token')
+            return {
+                ...state,
+                token: ""
             }
         default:
             return state

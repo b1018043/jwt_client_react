@@ -18,7 +18,7 @@ export function sendLoginRequest(email, pass) {
                 console.log("認証に失敗しました")
             } else
             {
-                console.log("無理")
+                console.log(`err:${err.status}`)
             }
             return { err };
         })
