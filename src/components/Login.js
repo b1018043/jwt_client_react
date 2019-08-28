@@ -1,19 +1,22 @@
 import React from "react";
 import TextField from '@material-ui/core/TextField';
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
+import {Redirect} from "react-router-dom";
 
 import {loginRequest} from "../actions/User";
 
 function Login(){
     const dispatch=useDispatch();
+    const {token}=useSelector(state=>state.user);
     const [value,setValue]=React.useState({
         email:"",
         pass: "",
     });
     return (
         <div>
+            {token&&<Redirect to="/todo"/>}
             <div>
                 <TextField
                     label="email"
