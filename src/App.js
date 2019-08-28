@@ -1,15 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
+import { ConnectedRouter } from "connected-react-router";
+import {Switch,Route} from "react-router-dom"
+
 import './App.css';
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
+import {history} from "./index"
 
 function App() {
   return (
-    <div className="App">
-      <SignUp/>
-      <Login/>
-    </div>
+    <ConnectedRouter history={history}>
+      <Switch>
+        <Route exact path="/signup" component={SignUp}/>
+        <Route exact path="/login" component={Login} />
+      </Switch>
+    </ConnectedRouter>
   );
 }
 
