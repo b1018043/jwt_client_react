@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import {history} from "./index";
 import AppBar from "./components/AppBar";
 import TodoLists from "./components/Todos";
+import Error from "./components/Error";
 
 function App() {
   const {token}=useSelector(state=>state.user);
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/todo" component={TodoLists} />
         <Route exact path="/signup" component={SignUp}/>
         <Route exact path="/login" component={Login} />
+        <Route path="/" component={Error} />
       </Switch>
     </ConnectedRouter>
   );
