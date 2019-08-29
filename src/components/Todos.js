@@ -8,14 +8,25 @@ import {deleteTodoRequest,patchTodoRequest,getTodoRequest} from "../actions/Todo
 const useStyles=makeStyles({
     todolist:{
         display: "inline-block",
-        width: "33%",
+        width: "32%",
         border: "solid black 0.5px",
         borderRadius: "1em",
-        margin: "1px",
+        margin: "2px",
         textAlign: "center",
+        float:"left",
+        top: 0,
+        left:0,
     },
     typo:{
         display: "inline-block",
+    },
+    card:{
+        top: "50%",
+        left: "50%",
+        width:"95%",
+        background:"#D8D8D8",
+        marginBottom: "3px",
+        transform: "translate(3%,-3%)",
     }
 })
 
@@ -31,6 +42,7 @@ const TodoList=({todos,text,token})=>{
                 return (
                     <Card
                         key={todo.todoid}
+                        className={classes.card}
                     >
                         <CardContent>
                             <Typography className={classes.typo} variant="subtitle1" gutterBottom>{todo.todo}</Typography>
