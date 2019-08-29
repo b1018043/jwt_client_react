@@ -2,8 +2,9 @@ import React from "react";
 import TextField from '@material-ui/core/TextField';
 import {useDispatch,useSelector} from "react-redux";
 import {makeStyles} from "@material-ui/core/styles";
+import {Typography} from "@material-ui/core";
 import Button from "@material-ui/core/Button";
-import { Redirect } from "react-router-dom";
+import { Redirect ,Link} from "react-router-dom";
 
 import {signUpRequest} from "../actions/User"
 
@@ -63,6 +64,9 @@ function SignUp(){
                 >
                     Sign Up
                 </Button>
+                <Typography>
+                    If you have account, please go to <Link to="/login">login page</Link>.
+                </Typography>
             </div>
         </div>
     )
